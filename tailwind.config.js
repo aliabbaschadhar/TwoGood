@@ -9,7 +9,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'abc-social': []
+        'social-mono': ['social-mono', 'sans-serif'],
+        'futura': ["Futura", "sans-serif"],
+        'helvetica': ['HelveticaNow', 'sans-serif'],
       }
     },
   },

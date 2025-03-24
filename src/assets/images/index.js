@@ -1,6 +1,6 @@
 import alemais from "./Alemais.png"
 import bag from './bag.png';
-import bagEnvelope from "./bagEnvelope.png"
+import bagEnvelope from "./bagEnvelop.png"
 import basil from "./basil.png"
 import butter from "./butter.png"
 import teady from "./teady.png";
