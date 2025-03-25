@@ -19,13 +19,13 @@ function Footer() {
   const Contact = ["150 Royal College Street", "London", "NW1 0TA"];
 
   return (
-    <div className="w-screen h-fit bg-[#FAF4EB] px-2 pt-6 lg:px-32 lg:pb-24 lg:pt-14 pb-20 flex flex-col gap-12 lg:gap-24 md:flex-row md:px-4">
+    <div className="h-fit bg-[#FAF4EB] px-2 pt-6 lg:px-12 xl:px-32 lg:pb-24 lg:pt-14 pb-20 flex flex-col gap-12 lg:gap-24 md:flex-row md:px-4">
       <div className="lg:w-[21vw] w-fit flex flex-col gap-4 lg:gap-6 px-2 py-2">
         <div className="flex flex-col gap-6 pt-2">
           <p className="font-extrabold font-helvetica text-[0.81rem] tracking-[0.15rem]">
             NEWSLETTER
           </p>
-          <p className="text-[#686766] font-thin tracking-wide text-[0.9rem] lg:text-[1rem]">
+          <p className="text-[#686766] font-thin tracking-wide text-[0.73rem] lg:text-[1rem]">
             Subscribe to receive updates, access to <br /> exclusive sales, and
             more.
           </p>
@@ -33,7 +33,7 @@ function Footer() {
 
         <div className="flex flex-col gap-4 lg:gap-6">
           <input
-            className="outline-none border-[0.1rem] lg:w-full w-2/3 text-[0.85rem] lg:text-[1rem] border-gray-300 p-2 lg:p-3  focus:border-black bg-transparent"
+            className="outline-none border-[0.1rem] lg:w-full md:max-w-xl text-[0.85rem] lg:text-[1rem] border-gray-300 p-2 lg:p-3  focus:border-black bg-transparent"
             type="text"
             placeholder="E-mail"
           />
@@ -54,7 +54,7 @@ function Footer() {
             {links.map((text, index) => (
               <a
                 key={index}
-                className="text-[#686766] font-thin tracking-wider text-[0.95rem]"
+                className="text-[#686766] font-thin tracking-wider text-[0.73rem] lg:text-[0.95rem]"
               >
                 {text}
               </a>
@@ -72,7 +72,7 @@ function Footer() {
             {SocialLinks.map((text, index) => (
               <a
                 key={index}
-                className="text-[#686766] font-thin tracking-wider text-[0.95rem]"
+                className="text-[#686766] font-thin tracking-wider text-[0.73rem] lg:text-[0.95rem]"
               >
                 {text}
               </a>
@@ -94,16 +94,16 @@ function Footer() {
             {Contact.map((text, index) => (
               <a
                 key={index}
-                className="text-[#686766] font-thin tracking-wide lg:text-[0.95rem] text-[0.91rem]"
+                className="text-[#686766] font-thin tracking-wide text-[0.73rem] lg:text-[0.95rem]"
               >
                 {text}
               </a>
             ))}
           </div>
-          <p className="text-[#686766] underline underline-offset-4 font-helvetica font-thin tracking-wide text-[1rem]">
+          <p className="text-[#686766] underline underline-offset-4 font-helvetica font-thin tracking-wide text-[0.73rem] lg:text-[0.95rem]">
             +44 (0)20 7226 1061
           </p>
-          <p className="text-[#686766] underline underline-offset-4 font-helvetica font-thin tracking-wide text-[1rem]">
+          <p className="text-[#686766] underline underline-offset-4 font-helvetica font-thin tracking-wide text-[0.73rem] lg:text-[0.95rem]">
             sales@t-o-o-g-o-o-d.com
           </p>
         </div>
