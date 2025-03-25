@@ -1,17 +1,12 @@
-import React from 'react'
-import { basil, alemais } from './assets/images';
-
+import React from "react";
 function App() {
   return (
-    <div>
-      <h1 className='font-social-mono'>Hello World</h1>
-      <h1 className='font-futura'>Hello World</h1>
-      <h1 className='font-helvetica'>Hello World</h1>
-      <h1 className='font-sans'>Hello World</h1>
-      <img src={basil} alt="" />
-      <img src={alemais} alt="" />
-    </div>
-  )
+    <>
+      <div className="w-screen h-screen bg-red-600 flex items-center justify-center text-white font-bold text-6xl">
+        <h1>Hello World !</h1>
+      </div>
+    </>
+  );
 }
 
 export default App;
