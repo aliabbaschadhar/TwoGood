@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { CartSvg, TwoGoodSvg } from './'
-
+import React, { useEffect, useState } from 'react';
+import { TwoGoodSvg, CartSvg } from './';
 function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
