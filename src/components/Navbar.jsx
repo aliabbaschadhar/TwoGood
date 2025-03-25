@@ -1,85 +1,149 @@
-// import React from "react";
+import React, { useEffect, useState } from 'react';
+import { TwoGoodSvg, CartSvg } from './';
+function Navbar() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
-// function Navbar() {
-//   return <h1>hello world </h1>;
-// }
+    // Array of navigation links
+    const navLinks = ['Shop', 'Wholesale', 'Catering', 'Donate'];
 
-// export default Navbar;
+    // Handle responsive resize
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1024);
+            if (window.innerWidth >= 1024) {
+                setIsMenuOpen(false);
+            }
+        };
 
-// {
-//   /* <div>
-//       <div className="w-screen h-5 sm:h-7 bg-[#E8E7E4] flex items-center justify-center">
-//         <p className="uppercase tracking-tight font-extrabold xl:text-[0.83rem] sm:text-[0.75rem] w-fit text-black text-center px-2 text-[0.55rem]">
-//           FREE WORLDWIDE SHIPPING ON CLOTHING ORDERS OVER £300
-//         </p>
-//       </div>
+        handleResize(); // Set initial state
+        window.addEventListener('resize', handleResize);
 
-//       <div className="w-full flex items-center justify-between xl:px-14 xl:py-5 sm:px-8 px-4 py-3">
-//         <div className="flex items-center justify-center xl:gap-10 gap-5">
-//           <img className="md:w-40 w-28 xl:mr-1" src={NavLogo} />
-//           <div className="hidden md:flex-row lg:gap-5 xl:gap-10 gap-2 md:grid md:grid-cols-4 lg:flex">
-//             <a className="font-extralight xl:text-[0.81rem] text-[0.55rem] tracking-[0.13vw]">
-//               NEW IN
-//             </a>
-//             <a className="font-extralight xl:text-[0.81rem] text-[0.55rem] tracking-[0.13vw]">
-//               CLOTHING
-//             </a>
-//             <a className="font-extralight xl:text-[0.81rem] text-[0.55rem] tracking-[0.13vw]">
-//               FURNITURE
-//             </a>
-//             <a className="font-extralight xl:text-[0.81rem] text-[0.55rem] tracking-[0.13vw]">
-//               HOMEWARE
-//             </a>
-//             <a className="font-extralight xl:text-[0.81rem] text-[0.55rem] tracking-[0.13vw]">
-//               INTERIOR DESIGN
-//             </a>
-//             <a className="font-extralight xl:text-[0.81rem] text-[0.55rem] tracking-[0.13vw]">
-//               ABOUT
-//             </a>
-//             <a className="font-extralight xl:text-[0.81rem] text-[0.55rem] tracking-[0.13vw]">
-//               JOURNAL
-//             </a>
-//           </div>
-//         </div>
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
-//         <div className="max-w-1/3 flex xl:gap-6 gap-3 items-center justify-center">
-//           <div className="relative">
-//             <select className="appearance-none tracking-[0.12vw] xl:w-24 w-16 lg:w-20 bg-white text-[#6E6D6D] xl:py-2 xl:pl-4 xl:pr-8 pr-4 xl:text-xs text-[0.6rem] font-light focus:outline-none">
-//               <option disabled>Select option</option>
-//               <option>USD $</option>
-//               <option>EUR €</option>
-//               <option>EUR €</option>
-//               <option>EUR €</option>
-//               <option>EUR €</option>
-//               <option>JPY ¥</option>
-//               <option>GBP £</option>
-//               <option>CNY ¥</option>
-//               <option>KRW ₩</option>
-//               <option>INR ₹</option>
-//             </select>
-//             <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-//               <svg
-//                 className="w-4 h-4 text-gray-500"
-//                 fill="none"
-//                 stroke="currentColor"
-//                 viewBox="0 0 24 24"
-//                 xmlns="http://www.w3.org/2000/svg"
-//               >
-//                 <path
-//                   strokeLinecap="round"
-//                   strokeLinejoin="round"
-//                   strokeWidth="1.5"
-//                   d="M19 9l-7 7-7-7"
-//                 ></path>
-//               </svg>
-//             </div>
-//           </div>
-//           <div className="flex xl:gap-5 gap-3">
-//             <GoPerson className="xl:w-7 xl:h-7 w-5 h-5" />
-//             <IoSearchOutline className="xl:w-7 xl:h-7 w-5 h-5" />
-//             <IoBagOutline className="xl:w-7 xl:h-7 w-5 h-5" />
-//           </div>
-//         </div>
-//       </div>
-//     </div> */
-// }
+    return (
+        <nav className='w-full p-4 sm:p-6 lg:p-10 h-auto min-h-[70px] lg:h-[15vh] flex items-center justify-between relative'>
+            <div className='cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out z-10'>
+                <TwoGoodSvg />
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className='flex items-center gap-4 lg:hidden z-10'>
+                <button
+                    className='p-2 rounded-md transition-all duration-300 ease-in-out hover:bg-gray-100'
+                    onClick={() => setIsCartOpen(!isCartOpen)}
+                >
+                    {isCartOpen ? (
+                        <div className='relative w-6 h-6 transition-all duration-300'>
+                            <span className='block w-6 h-0.5 bg-black transform rotate-45 absolute top-3'></span>
+                            <span className='block w-6 h-0.5 bg-black transform -rotate-45 absolute top-3'></span>
+                        </div>
+                    ) : (
+                        <div className="transform transition-transform duration-300 ease-in-out hover:scale-110">
+                            <CartSvg height='24' width='28' />
+                        </div>
+                    )}
+                </button>
+
+                <button
+                    className='group relative flex flex-col items-center justify-center p-2 sm:p-2.5 rounded-md transition-all duration-300 ease-in-out hover:bg-gray-100 active:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50'
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                >
+                    <div className="relative w-5 h-5 sm:w-6 sm:h-6 flex flex-col justify-center items-center">
+                        {isMenuOpen ? (
+                            // Cross icon when menu is open
+                            <>
+                                <span className='absolute w-full h-0.5 bg-black transform rotate-45 transition-transform duration-300 ease-out'></span>
+                                <span className='absolute w-full h-0.5 bg-black transform -rotate-45 transition-transform duration-300 ease-out'></span>
+                            </>
+                        ) : (
+                            // Hamburger icon when menu is closed
+                            <>
+                                <span className='absolute top-0 w-full h-0.5 bg-black rounded-sm transition-all duration-300 ease-in-out transform group-hover:translate-y-0.5 group-hover:bg-gray-800'></span>
+                                <span className='absolute w-full h-0.5 bg-black rounded-sm transition-all duration-300 ease-in-out group-hover:w-3/4 group-hover:bg-gray-800'></span>
+                                <span className='absolute bottom-0 w-full h-0.5 bg-black rounded-sm transition-all duration-300 ease-in-out transform group-hover:-translate-y-0.5 group-hover:bg-gray-800'></span>
+                            </>
+                        )}
+                    </div>
+                </button>
+            </div>
+
+            {/* Desktop Menu */}
+            <div className='hidden lg:flex items-center justify-between gap-8 uppercase text-xs font-social-mono font-semibold'>
+                {navLinks.map((link, index) => (
+                    <a
+                        key={index}
+                        href="#"
+                        className="relative group py-1 transition-all duration-300 ease-in-out"
+                    >
+                        <span className="transition-all duration-300 ease-in-out group-hover:text-gray-500">{link}</span>
+                        <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-black transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                    </a>
+                ))}
+                <button
+                    className='group relative flex flex-col items-center justify-center p-2 sm:p-2.5 rounded-md transition-all duration-300 ease-in-out hover:bg-gray-100 active:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50'
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                >
+                    <div className="relative w-5 h-5 sm:w-6 sm:h-6 flex flex-col justify-center items-center">
+                        {isMenuOpen ? (
+                            // Cross icon when menu is open
+                            <>
+                                <span className='absolute w-full h-0.5 bg-black transform rotate-45 transition-transform duration-300 ease-out'></span>
+                                <span className='absolute w-full h-0.5 bg-black transform -rotate-45 transition-transform duration-300 ease-out'></span>
+                            </>
+                        ) : (
+                            // Hamburger icon when menu is closed
+                            <>
+                                <span className='absolute top-0 w-full h-0.5 bg-black rounded-sm transition-all duration-300 ease-in-out transform group-hover:translate-y-0.5 group-hover:bg-gray-800'></span>
+                                <span className='absolute w-full h-0.5 bg-black rounded-sm transition-all duration-300 ease-in-out group-hover:w-3/4 group-hover:bg-gray-800'></span>
+                                <span className='absolute bottom-0 w-full h-0.5 bg-black rounded-sm transition-all duration-300 ease-in-out transform group-hover:-translate-y-0.5 group-hover:bg-gray-800'></span>
+                            </>
+                        )}
+                    </div>
+                </button>
+                <button
+                    className='p-2 transition-all duration-300 ease-in-out hover:bg-gray-100 rounded-full'
+                    onClick={() => setIsCartOpen(!isCartOpen)}
+                >
+                    {isCartOpen ? (
+                        <div className='relative w-6 h-6 transition-all duration-300'>
+                            <span className='block w-6 h-0.5 bg-black transform rotate-45 absolute top-3'></span>
+                            <span className='block w-6 h-0.5 bg-black transform -rotate-45 absolute top-3'></span>
+                        </div>
+                    ) : (
+                        <div className="transform transition-transform duration-300 ease-in-out hover:scale-110">
+                            <CartSvg height='24' width='28' />
+                        </div>
+                    )}
+                </button>
+            </div>
+
+            {/* Mobile Menu Overlay */}
+            {isMenuOpen && (
+                <div className='fixed inset-0 bg-white z-20 pt-24 px-6 flex flex-col lg:hidden'>
+                    <div className='flex flex-col space-y-8 uppercase text-xl font-social-mono font-semibold'>
+                        {navLinks.map((link, index) => (
+                            <a
+                                key={index}
+                                href="#"
+                                className="py-2 border-b border-gray-200"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                {link}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            )}
+        </nav>
+    )
+}
+
+export default Navbar
+

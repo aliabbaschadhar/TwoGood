@@ -1,12 +1,13 @@
-import React from "react";
+
+import React from 'react'
+import { Navbar } from './components';
+
 function App() {
   return (
-    <>
-      <div className="w-screen h-screen bg-red-600 flex items-center justify-center text-white font-bold text-6xl">
-        <h1>Hello World !</h1>
-      </div>
-    </>
-  );
+    <main className='w-full'>
+      <Navbar />
+    </main>
+  )
 }
 
 export default App;
