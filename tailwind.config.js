@@ -12,7 +12,10 @@ export default {
         'social-mono': ['social-mono', 'sans-serif'],
         'futura': ["Futura", "sans-serif"],
         'helvetica': ['HelveticaNow', 'sans-serif'],
-      }
+      },
+      fontWeight: {
+        'extrabold': '1000',
+      },
     },
   },
   plugins: [],

@@ -1,15 +1,16 @@
 import React from "react";
 
-function TwoGoodSvg() {
+function TwoGoodSvg({ width, height, className }) {
   return (
-    <div>
+    <div className={`${className || ""}`}>
       <svg
-        width="106"
-        height="83"
+        width={width || "106"}
+        height={height || "83"}
         viewBox="0 0 106 83"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         style={{ transform: "translate(0px, 0px)" }}
+        className="transition-all duration-300"
       >
         <g clipPath="url(#clip0_2228_162)">
           <path
