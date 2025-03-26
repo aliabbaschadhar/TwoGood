@@ -1,17 +1,16 @@
 import React from "react";
 import Footer from "./components/Footer";
-import Journal from "./components/Journal";
-import TableChairImg from "./components/TableChairImg";
-import ContactOrder from "./components/ContactOrder";
-import HandyMan from "./components/HandyMan";
+import Email from "./components/Email";
+import Impact from "./components/Impact";
 function App() {
   return (
     <>
-      <HandyMan />
-      <ContactOrder />
-      <TableChairImg />
-      <Journal />
-      <Footer />
+      <div className="bg-[#F7F7F7]">
+        <SendMessage />
+        <Impact />
+        <Email />
+        <Footer />
+      </div>
     </>
   );
 }

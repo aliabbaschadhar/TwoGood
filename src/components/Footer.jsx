@@ -1,114 +1,77 @@
-import React from "react";
-import { LiaPinterestP } from "react-icons/lia";
-import { PiInstagramLogoBold } from "react-icons/pi";
-
+import FooterLogo from "./FooterLogo";
 function Footer() {
-  const links = [
-    "Shipping & Returns",
-    "Size Guide",
-    "FAQ",
-    "Terms & Conditions",
-    "Cookies Policy",
-    "Privacy Policy",
-    "Terms of Service",
-    "Refund Policy",
-  ];
-
-  const SocialLinks = ["About Toogood", "Contact", "Stockists", "Careers"];
-
-  const Contact = ["150 Royal College Street", "London", "NW1 0TA"];
-
   return (
-    <div className="h-fit bg-[#FAF4EB] px-2 pt-6 lg:px-12 xl:px-32 lg:pb-24 lg:pt-14 pb-20 flex flex-col gap-12 lg:gap-24 md:flex-row md:px-4">
-      <div className="lg:w-[21vw] w-fit flex flex-col gap-4 lg:gap-6 px-2 py-2">
-        <div className="flex flex-col gap-6 pt-2">
-          <p className="font-extrabold font-helvetica text-[0.81rem] tracking-[0.15rem]">
-            NEWSLETTER
-          </p>
-          <p className="text-[#686766] font-thin tracking-wide text-[0.73rem] lg:text-[1rem]">
-            Subscribe to receive updates, access to <br /> exclusive sales, and
-            more.
-          </p>
+    <>
+      <div className="relative flex flex-col gap-32 p-4 lg:p-6">
+        <div className="w-fit lg:absolute lg:top-1/4 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2">
+          <FooterLogo />
         </div>
 
-        <div className="flex flex-col gap-4 lg:gap-6">
-          <input
-            className="outline-none border-[0.1rem] lg:w-full md:max-w-xl text-[0.85rem] lg:text-[1rem] border-gray-300 p-2 lg:p-3  focus:border-black bg-transparent"
-            type="text"
-            placeholder="E-mail"
-          />
-          <button className="w-fit flex items-center justify-center px-6 py-3 lg:py-4 lg:px-8 bg-[rgb(15,15,15)] text-white cursor-pointer">
-            <p className="tracking-[0.15rem] text-[0.6rem] lg:text-[0.8rem]">
-              SUBSCRIBE
+        <div className="flex lg:justify-between md:gap-72 gap-24">
+          <div className="flex flex-col lg:gap-6 gap-10">
+            <p className="lg:text-[0.9rem] lg:tracking-tighter font-helvetic text-[0.62rem] text-gray-500 uppercase">
+              connect with us{" "}
             </p>
-          </button>
-        </div>
-      </div>
-
-      <div className="w-fit px-2">
-        <div className="flex flex-col gap-6 pt-2">
-          <p className="font-extrabold font-helvetica text-[0.81rem] tracking-[0.15rem]">
-            INFORMATION
-          </p>
-          <div className="flex flex-col gap-2 lg:gap-4">
-            {links.map((text, index) => (
-              <a
-                key={index}
-                className="text-[#686766] font-thin tracking-wider text-[0.73rem] lg:text-[0.95rem]"
-              >
-                {text}
+            <div className="flex flex-col">
+              <a className="text-[1rem] font-helvetica">Facebook</a>
+              <a className="text-[1rem] font-helvetica">Instagram</a>
+              <a className="text-[1rem] font-helvetica">Twitter</a>
+              <a className="text-[1rem] font-helvetica">LinkedIn</a>
+              <a className="text-[1rem] font-helvetica">Youtube</a>
+            </div>
+          </div>
+          <div className="flex flex-col lg:gap-6 gap-10">
+            <p className="lg:text-[0.9rem] lg:tracking-tighter font-helvetic text-[0.62rem] text-gray-500 uppercase">
+              THE NITTY GRITTIES
+            </p>
+            <div className="flex flex-col">
+              <a className="text-[1rem] lg:text-end font-helvetica">
+                Good Things FAQs
               </a>
-            ))}
+              <a className="text-[1rem] lg:text-end font-helvetica">
+                Good Food FAQs
+              </a>
+              <a className="text-[1rem] lg:text-end font-helvetica">
+                Good Places
+              </a>
+              <a className="text-[1rem] lg:text-end font-helvetica">
+                Pathways{" "}
+              </a>
+              <a className="text-[1rem] lg:text-end font-helvetica">Careers</a>
+              <a className="text-[1rem] lg:text-end font-helvetica">
+                Wholesale
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-16 lg:gap-24 lg:flex-col-reverse lg:py-10">
+          <div className="flex flex-col lg:justify-center lg:items-center gap-7">
+            <p className="lg:hidden text-[0.62rem] text-gray-500 uppercase">
+              Acknowledgement of country
+            </p>
+            <p className="font-helvetica text-sm text-start lg:text-center lg:max-w-[65vw] lg:text-[1rem] leading-6">
+              We are proud and privileged to have our home on this land, and to
+              be able to continue the long tradition of community coming
+              together around food, begun thousands of years ago by First
+              Nations peoples. As we stand together on this unceded land, we
+              acknowledge our First Nations people, are the original custodians
+              of this land, and we recognise their deep connection to land,
+              water, sky and community which continues today. We pay our deep
+              respects to community elders, past, present and emerging, for they
+              hold the memories, the traditions, the culture and hopes of
+              Aboriginal and Torres Strait Islander peoples. Always was, always
+              will be Aboriginal land.
+            </p>
+          </div>
+
+          <div className="text-gray-500 uppercase text-xs font-helvetica tracking-tight flex items-center justify-between lg:justify-center lg:gap-9 lg:text-[0.85rem]">
+            <p>© Two Good Co. 2025</p>
+            <p>Terms of Use</p>
+            <p>Privacy Policy</p>
           </div>
         </div>
       </div>
-
-      <div className="w-fit px-2">
-        <div className="flex flex-col gap-4 pt-2">
-          <p className="font-extrabold font-helvetica text-[0.81rem] tracking-[0.15rem]">
-            ABOUT
-          </p>
-          <div className="flex flex-col gap-2 lg:gap-4">
-            {SocialLinks.map((text, index) => (
-              <a
-                key={index}
-                className="text-[#686766] font-thin tracking-wider text-[0.73rem] lg:text-[0.95rem]"
-              >
-                {text}
-              </a>
-            ))}
-          </div>
-        </div>
-        <div className="flex gap-6 lg:gap-8 pt-4">
-          <PiInstagramLogoBold className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400" />
-          <LiaPinterestP className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400" />
-        </div>
-      </div>
-
-      <div className="w-fit px-2">
-        <div className="flex flex-col gap-4 pt-2">
-          <p className="font-extrabold font-helvetica text-[0.81rem] tracking-[0.15rem]">
-            CONTACT
-          </p>
-          <div className="flex flex-col gap-1">
-            {Contact.map((text, index) => (
-              <a
-                key={index}
-                className="text-[#686766] font-thin tracking-wide text-[0.73rem] lg:text-[0.95rem]"
-              >
-                {text}
-              </a>
-            ))}
-          </div>
-          <p className="text-[#686766] underline underline-offset-4 font-helvetica font-thin tracking-wide text-[0.73rem] lg:text-[0.95rem]">
-            +44 (0)20 7226 1061
-          </p>
-          <p className="text-[#686766] underline underline-offset-4 font-helvetica font-thin tracking-wide text-[0.73rem] lg:text-[0.95rem]">
-            sales@t-o-o-g-o-o-d.com
-          </p>
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 
