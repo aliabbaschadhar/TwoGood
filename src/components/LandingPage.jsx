@@ -4,20 +4,30 @@ import { HeroImg } from '../assets/images';
 
 function LandingPage() {
     return (
-        <section className='flex flex-col mt-16 md:mt-20 px-4 md:px-6'>
-            <div className='flex flex-col pb-6 md:pb-10 relative z-20'>
+        <section
+            data-scroll-section
+            className='flex flex-col mt-16 md:mt-20 px-4 md:px-6'
+        >
+            <div
+                className='flex flex-col pb-6 md:pb-10 relative z-20'>
                 {['change', 'the course'].map((text, index) => (
                     <h1 key={index} className='text-[14.5vw] lg:text-[15.5vw] font-futura font-extrabold uppercase leading-none tracking-tight -mb-2 md:-mb-6 lg:-mb-8 text-nowrap overflow-hidden'>{text}</h1>
                 ))}
             </div>
 
-            <div className='relative z-10 mb-20 md:mb-36'>
+            <div
+                data-scroll
+                data-scroll-speed='0.2'
+                className='relative z-10 mb-20 md:mb-36'>
                 <img
                     className='w-full'
                     src={HeroImg} alt="founder of company named Alexis" />
             </div>
 
-            <div className='w-full text-center mt-10 md:mt-20 flex flex-col gap-3 md:gap-4 pb-12 md:pb-20'>
+            <div
+                data-scroll
+                data-scroll-speed='-0.3'
+                className='w-full text-center mt-10 md:mt-20 flex flex-col gap-3 md:gap-4 pb-12 md:pb-20 z-20'>
                 <h4 className='font-futura text-4xl md:text-5xl lg:text-7xl uppercase mb-2 md:mb-4'>Take the Pledge.</h4>
                 <p className='font-helvetica text-base md:text-xl text-zinc-700 px-2 md:px-0'>
                     Support and empower women experiencing domestic violence, every day of the year.
