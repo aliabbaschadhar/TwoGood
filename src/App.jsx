@@ -1,11 +1,12 @@
 
 import React from 'react'
-import { Navbar } from './components';
+import { LandingPage, Navbar } from './components';
 
 function App() {
   return (
     <main className='w-full'>
       <Navbar />
+      <LandingPage />
     </main>
   )
 }
