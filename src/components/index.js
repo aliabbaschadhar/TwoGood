@@ -2,6 +2,7 @@ import TwoGoodSvg from "./TwoGoodSvg";
 import CartSvg from "./CartSvg";
 import Navbar from "./Navbar";
 import Button from "./Button";
+import OriginalLogo from "./OriginalLogo";
 import NavLogo from "./NavLogo";
 import NavDesktopLinks from "./NavDesktopLinks";
 import NavControls from "./NavControls";
@@ -16,6 +17,7 @@ export {
     CartSvg,
     Navbar,
     Button,
+    OriginalLogo,
     NavLogo,
     NavDesktopLinks,
     NavControls,
