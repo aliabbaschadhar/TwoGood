@@ -3,7 +3,7 @@ import { CartSvg } from './';
 
 function NavControls({ isMobile, isMenuOpen, isCartOpen, toggleMenu, toggleCart }) {
     return (
-        <div className={`flex items-center gap-4 z-10 ml-auto rounded-full px-4 py-2 ${isMenuOpen || isCartOpen ? "bg-zinc-800" : "bg-white"}`}>
+        <div className={`flex items-center gap-4 z-10 ml-auto rounded-full px-4 py-2 ${isMenuOpen || isCartOpen ? "bg-zinc-800" : "bg-white"} sticky top-0 right-0 transition-all duration-300 ease-in-out`}>
             {/* Cart icon */}
             <button
                 className='p-2 transition-all duration-300 ease-in-out'

@@ -1,5 +1,6 @@
 import React from 'react'
 import { HeroImg } from '../assets/images';
+import OriginalLogo from './OriginalLogo';
 
 function LandingPage() {
     return (
