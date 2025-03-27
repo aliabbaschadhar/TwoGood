@@ -4,7 +4,7 @@ import patricia from "../assets/images/Patricia.jpg";
 
 function Impact() {
   return (
-    <div className="flex flex-col sm:flex-row-reverse sm:justify-between gap-6 px-4 lg:p-8 py-10 mb-10">
+    <div className="flex flex-col sm:flex-row-reverse sm:justify-between gap-6 px-4 lg:p-8 lg:py-10 pt-10 mb-10">
       <div className="flex h-44 sm:h-full sm:w-3/6 sm:flex-col md:flex-row justify-end lg:gap-5 lg:w-8/12">
         <img className="w-1/2 pr-2 sm:pr-0 object-cover" src={ChristinaMaria} />
         <img className="w-1/2 pl-2 sm:pl-0 object-cover" src={patricia} />

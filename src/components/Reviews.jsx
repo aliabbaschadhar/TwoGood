@@ -70,12 +70,12 @@ function Reviews() {
 
   return (
     <>
-      <div className="px-4 mb-12">
+      <div className="lg:px-8 px-4 lg:mb-12 mb-3">
         <div className="flex justify-between border-b-[0.09rem] border-black">
-          <p className="font-helvetica text-[0.66rem] lg:text-[0.85rem] uppercase w-32 text-start md:w-full">
+          <p className="font-helvetica text-[0.75rem] lg:text-[0.85rem] uppercase w-36 text-start md:w-full">
             Words of Goodness
           </p>
-          <p className="font-helvetica text-[0.66rem] lg:text-[0.85rem] uppercase w-32 text-end md:w-full">
+          <p className="font-helvetica text-[0.75rem] lg:text-[0.85rem] uppercase w-32 text-end md:w-full">
             Messages of Love & Support
           </p>
         </div>
@@ -109,7 +109,7 @@ function Reviews() {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center gap-8 py-2 mb-72 lg:mb-96">
+      <div className="flex flex-col justify-center items-center gap-8 py-2 mb-10 md:mb-72 lg:mb-96">
         <AnimatePresence mode="wait">
           <motion.p
             key={activeIndex}
@@ -117,7 +117,7 @@ function Reviews() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="text-2xl lg:text-7xl uppercase tracking-tight font-futura px-6 lg:px-0 py-8 lg:my-12 text-center lg:max-w-7xl"
+            className="text-2xl lg:text-7xl uppercase tracking-tight font-futura px-10 lg:px-0 lg:py-8 py-2 lg:my-12 text-center lg:max-w-7xl"
           >
             {data[activeIndex].message}
           </motion.p>

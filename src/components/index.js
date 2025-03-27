@@ -6,6 +6,7 @@ import Footer from "./Footer.jsx";
 import Email from "./Email.jsx";
 import Impact from "./Impact.jsx";
 import Reviews from "./Reviews.jsx";
+import ProductPage from "./ProductPage.jsx";
 
 export {
   TwoGoodSvg,
@@ -16,4 +17,5 @@ export {
   Email,
   Impact,
   Reviews,
+  ProductPage,
 };
