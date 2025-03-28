@@ -1,7 +1,15 @@
-import React, { useEffect } from 'react'
-import { Goods, LandingPage, Navbar } from './components';
+import React, { useEffect } from "react";
 import LocomotiveScroll from 'locomotive-scroll';
-
+import {
+  Navbar,
+  LandingPage,
+  Goods,
+  Reviews,
+  Impact,
+  Email,
+  Footer,
+  ProductPage,
+} from "./components/index";
 
 function App() {
 
@@ -19,10 +27,15 @@ function App() {
   return (
     <main
       data-scroll-container
-      className='w-full'>
+      className='w-full bg-[#F7F7F7]'>
       <Navbar />
       <LandingPage />
       <Goods />
+      <ProductPage />
+      <Reviews />
+      <Impact />
+      <Email />
+      <Footer />
     </main>
   )
 }
