@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { LandingPage, Navbar } from './components';
+import { Goods, LandingPage, Navbar } from './components';
 import LocomotiveScroll from 'locomotive-scroll';
 
 
@@ -22,6 +22,7 @@ function App() {
       className='w-full'>
       <Navbar />
       <LandingPage />
+      <Goods />
     </main>
   )
 }

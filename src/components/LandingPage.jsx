@@ -18,15 +18,13 @@ function LandingPage() {
             <div
                 data-scroll
                 data-scroll-speed='0.2'
-                className='relative z-10 mb-20 md:mb-36'>
+                className='relative z-10 mb-20 md:mb-28'>
                 <img
                     className='w-full'
                     src={HeroImg} alt="founder of company named Alexis" />
             </div>
 
             <div
-                data-scroll
-                data-scroll-speed='-0.3'
                 className='w-full text-center mt-10 md:mt-20 flex flex-col gap-3 md:gap-4 pb-12 md:pb-20 z-20'>
                 <h4 className='font-futura text-4xl md:text-5xl lg:text-7xl uppercase mb-2 md:mb-4'>Take the Pledge.</h4>
                 <p className='font-helvetica text-base md:text-xl text-zinc-700 px-2 md:px-0'>

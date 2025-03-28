@@ -11,6 +11,8 @@ import NavCartOverlay from "./NavCartOverlay";
 import NavMenuItemLink from "./NavMenuItemLink";
 import NavFooterSection from "./NavFooterSection";
 import LandingPage from "./LandingPage";
+import Goods from "./Goods";
+
 
 export {
     TwoGoodSvg,
@@ -26,4 +28,6 @@ export {
     NavMenuItemLink,
     NavFooterSection,
     LandingPage,
+    Goods,
+
 }
