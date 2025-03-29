@@ -6,6 +6,7 @@ import basil from "./basil.png"
 import butter from "./butter.png"
 import teady from "./teady.png";
 import theCourse from "./TheCourse.avif";
+import course from "./The-Course.png";
 import slider from "./Slider.png";
 import dexter from "./Dexter-Kim.jpg"
 import handWash from "./handWash.png";
@@ -34,5 +35,6 @@ export {
     HeroImg,
     headerAnimation,
     newsletterAnimation,
-    quoteAnimation
+    quoteAnimation,
+    course,
 }
