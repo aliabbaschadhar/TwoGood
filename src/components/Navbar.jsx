@@ -99,8 +99,7 @@ function Navbar() {
     const isDarkMode = isMenuOpen || isCartOpen;
 
     return (
-        <nav className={`w-full p-2 sm:p-4 lg:p-6 h-auto min-h-[70px] lg:h-[15vh] flex items-center justify-between relative z-999 ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'} z-50 
-        `}>
+        <nav className={`w-full p-2 sm:p-4 lg:p-6 h-auto min-h-[70px] lg:h-[15vh] flex items-center justify-between relative ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'} z-40`}>
             {/* Left Section - Logo */}
             <NavLogo isMobile={isMobile} />
 
@@ -110,14 +109,27 @@ function Navbar() {
                 isDarkMode={isDarkMode}
             />
 
-            {/* Right Section - Icons */}
-            <NavControls
-                isMobile={isMobile}
-                isMenuOpen={isMenuOpen}
-                isCartOpen={isCartOpen}
-                toggleMenu={toggleMenu}
-                toggleCart={toggleCart}
-            />
+            {/* Right Section - Icons (invisible placeholder) */}
+            <div className="invisible">
+                <NavControls
+                    isMobile={isMobile}
+                    isMenuOpen={isMenuOpen}
+                    isCartOpen={isCartOpen}
+                    toggleMenu={toggleMenu}
+                    toggleCart={toggleCart}
+                />
+            </div>
+
+            {/* Fixed Controls */}
+            <div className="fixed top-4 right-4 z-50">
+                <NavControls
+                    isMobile={isMobile}
+                    isMenuOpen={isMenuOpen}
+                    isCartOpen={isCartOpen}
+                    toggleMenu={toggleMenu}
+                    toggleCart={toggleCart}
+                />
+            </div>
 
             {/* Menu Overlay */}
             <NavMenuOverlay
