@@ -12,6 +12,7 @@ import NavMenuItemLink from "./NavMenuItemLink";
 import NavFooterSection from "./NavFooterSection";
 import LandingPage from "./LandingPage";
 import Goods from "./Goods";
+import GoodCard from "./GoodCard.jsx";
 import FooterLogo from "./FooterLogo";
 import QuoteAnimation from "./QuoteAnimation.jsx";
 import Footer from "./Footer.jsx";
@@ -41,5 +42,5 @@ export {
   ProductPage,
   LandingPage,
   Goods,
-
+  GoodCard,
 }

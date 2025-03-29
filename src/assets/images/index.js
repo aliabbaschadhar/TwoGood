@@ -1,4 +1,5 @@
 import alemais from "./Alemais.avif"
+import Alemais from "./Alemais.png"
 import bag from './bag.png';
 import bagEnvelope from "./bagEnvelop.png"
 import basil from "./basil.png"
@@ -18,6 +19,7 @@ import quoteAnimation from "./quote-animation.svg";
 
 export {
     alemais,
+    Alemais,
     bag,
     bagEnvelope,
     basil,
