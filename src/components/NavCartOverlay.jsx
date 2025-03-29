@@ -12,7 +12,8 @@ function NavCartOverlay({ isOpen, marqueeTextFirst, marqueeTextSecond }) {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className='fixed top-[70px] sm:top-[83px] lg:top-[15vh] left-0 right-0 bg-black text-white z-10 shadow-2xl overflow-y-auto flex flex-col items-center pt-20 lg:pt-20'
+            className='fixed top-[70px] sm:top-[83px] lg:top-[15vh] left-0 right-0 bg-black text-white z-40 shadow-2xl overflow-y-auto flex flex-col items-center pt-20 lg:pt-20'
+            onClick={(e) => e.stopPropagation()}
         >
             <h5 className='text-2xl mb-4 font-helvetica'>
                 Your cart is empty.

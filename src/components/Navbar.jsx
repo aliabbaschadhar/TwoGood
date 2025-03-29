@@ -17,7 +17,7 @@ function Navbar() {
 
     // Array of navigation links
     const navLinks = ['Shop', 'Wholesale', 'Catering', 'Donate'];
-    const overLayLinks = ['Shop', 'Wholesale', 'Catering', 'impact', 'About', 'Contact', 'donate', 'sign in'];
+    const overLayLinks = ['Shop', 'Wholesale', 'Catering', 'impact', 'About', 'Contact', 'donate', 'sign in', 'Manage Account'];
     const socialLinks = ['Facebook', 'Instagram', 'Twitter', 'LinkedIn', 'YouTube'];
     const nittyGrittyLinks = ['Good Things FAQs', 'Good Food FAQs', 'Good Places'];
     const legalLinks = ['Pathways', 'Careers', 'Privacy Policy', 'Terms of Service'];
@@ -40,10 +40,51 @@ function Navbar() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+    // Disable scrolling when overlays are open
+    useEffect(() => {
+        if (isMenuOpen || isCartOpen) {
+            // Get the scroll container used by Locomotive Scroll
+            const scrollContainer = document.querySelector('[data-scroll-container]');
+            if (scrollContainer) {
+                // Add a class that we can use to control scrolling
+                scrollContainer.classList.add('no-scroll');
+                document.body.style.overflow = 'hidden';
+
+                // Find any active instance of Locomotive Scroll
+                const locomotiveInstance = window.locomotiveScroll;
+                if (locomotiveInstance) {
+                    locomotiveInstance.stop();
+                }
+            }
+        } else {
+            // Re-enable scrolling when overlays are closed
+            const scrollContainer = document.querySelector('[data-scroll-container]');
+            if (scrollContainer) {
+                scrollContainer.classList.remove('no-scroll');
+                document.body.style.overflow = '';
+
+                // Restart Locomotive Scroll if it exists
+                const locomotiveInstance = window.locomotiveScroll;
+                if (locomotiveInstance) {
+                    locomotiveInstance.start();
+                }
+            }
+        }
+
+        return () => {
+            document.body.style.overflow = '';
+            const scrollContainer = document.querySelector('[data-scroll-container]');
+            if (scrollContainer) {
+                scrollContainer.classList.remove('no-scroll');
+            }
+        };
+    }, [isMenuOpen, isCartOpen]);
+
     // Swap logo
     useMotionValueEvent(scrollY, 'change', () => {
         //TODO:
-    })
+    });
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -58,7 +99,8 @@ function Navbar() {
     const isDarkMode = isMenuOpen || isCartOpen;
 
     return (
-        <nav className={`w-full p-2 sm:p-4 lg:p-6 h-auto min-h-[70px] lg:h-[15vh] flex items-center justify-between relative z-999 ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'} z-50`}>
+        <nav className={`w-full p-2 sm:p-4 lg:p-6 h-auto min-h-[70px] lg:h-[15vh] flex items-center justify-between relative z-999 ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'} z-50 
+        `}>
             {/* Left Section - Logo */}
             <NavLogo isMobile={isMobile} />
 

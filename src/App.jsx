@@ -19,15 +19,19 @@ function App() {
       smooth: true,
     });
 
+    // Make the instance accessible globally for the Navbar component
+    window.locomotiveScroll = scroll;
+
     return () => {
       scroll.destroy();
+      delete window.locomotiveScroll;
     }
   }, []);
 
   return (
     <main
       data-scroll-container
-      className='w-full bg-[#F7F7F7]'>
+      className='w-full bg-[#F7F7F7] overflow-hidden'>
       <Navbar />
       <LandingPage />
       <Goods />
