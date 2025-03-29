@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import LocomotiveScroll from "locomotive-scroll";
 import {
   Reviews,
   Impact,
@@ -7,9 +8,23 @@ import {
   ProductPage,
 } from "./components/index";
 function App() {
+
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: scrollRef.current,
+      smooth: true,
+    });
+
+    return () => {
+      if (scroll) scroll.destroy();
+    };
+  }, []);
+
   return (
     <>
-      <div className="bg-[#F7F7F7]">
+      <div ref={scrollRef} id="main" className="bg-[#F7F7F7]">
         <ProductPage />
         <Reviews />
         <Impact />

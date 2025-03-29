@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { basil, alemais, teady, theCourse } from "../assets/images/index";
-
+import { motion } from "framer-motion";
 function ProductPage() {
   const data = [
     { image: teady, title: "Two Hugs Bar 'n' Bear Set", price: "$50" },
@@ -48,25 +48,9 @@ function ProductPage() {
           </div>
         </div>
         <div className="flex flex-wrap justify-between mt-14 h-fit">
-          {data.map((item) => {
-            return (
-              <div className="flex flex-col items-center w-[49%] mb-20 lg:h-[45rem]">
-                <div className="flex items-center justify-center w-full h-full">
-                  <img className="w-32 md:w-72 lg:w-[78%]" src={item.image} />
-                </div>
-                <div>
-                  <p className="text-center text-xs lg:text-sm font-helvetica px-2 pt-5  leading-[0.9rem] uppercase">
-                    {item.title}
-                  </p>
-                </div>
-                <div>
-                  <p className="pt-1 text-center text-sm lg:text-xs font-helvetica font-medium">
-                    {item.price}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+          {data.map((item, index) => (
+            <HoverProduct key={index} item={item} />
+          ))}
         </div>
       </div>
     </>
@@ -74,3 +58,56 @@ function ProductPage() {
 }
 
 export default ProductPage;
+function HoverProduct({ item }) {
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  function handleMouseMove(e) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  }
+
+  function handleMouseEnter() {
+    setIsHovered(true);
+  }
+
+  function handleMouseLeave() {
+    setIsHovered(false);
+  }
+
+  return (
+    <motion.div
+      className="relative flex flex-col items-center w-[50%] mb-20 lg:h-[45rem] z-10"
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="absolute inset-0 pointer-events-none overflow-visible">
+        {isHovered && (
+          <motion.div
+            className="absolute bg-white opacity-100 z-0 rounded-full pointer-events-none"
+            style={{
+              width: "18rem",
+              height: "18rem",
+              transform: `translate(-50%, -50%)`,
+              left: cursorPos.x,
+              top: cursorPos.y,
+            }}
+            animate={{ opacity: 0.7 }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+          />
+        )}
+      </div>
+
+      <div className="flex items-center justify-center w-full h-full z-10">
+        <img className="w-32 md:w-72 lg:w-[78%]" src={item.image} />
+      </div>
+      <p className="text-center text-xs lg:text-sm font-helvetica px-2 pt-5 leading-[0.9rem] uppercase">
+        {item.title}
+      </p>
+      <p className="pt-1 text-center text-sm lg:text-xs font-helvetica font-medium">
+        {item.price}
+      </p>
+    </motion.div>
+  );
+}

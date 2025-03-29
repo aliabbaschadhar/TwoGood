@@ -109,7 +109,7 @@ function Reviews() {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center gap-8 py-2 mb-10 md:mb-72 lg:mb-96">
+      <div className="flex flex-col justify-center items-center gap-8 py-2 mb-10 md:mb-72">
         <AnimatePresence mode="wait">
           <motion.p
             key={activeIndex}
