@@ -13,11 +13,41 @@ function Footer() {
               connect with us{" "}
             </p>
             <div className="flex flex-col">
-              <a className="text-[1rem] font-helvetica">Facebook</a>
-              <a className="text-[1rem] font-helvetica">Instagram</a>
-              <a className="text-[1rem] font-helvetica">Twitter</a>
-              <a className="text-[1rem] font-helvetica">LinkedIn</a>
-              <a className="text-[1rem] font-helvetica">Youtube</a>
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-gray-500 text-[1rem] font-helvetica"
+              >
+                Facebook
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-gray-500 text-[1rem] font-helvetica"
+              >
+                Instagram
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-gray-500 text-[1rem] font-helvetica"
+              >
+                Twitter
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-gray-500 text-[1rem] font-helvetica"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-gray-500 text-[1rem] font-helvetica"
+              >
+                Youtube
+              </a>
             </div>
           </div>
           <div className="flex flex-col lg:gap-6 gap-10">
@@ -25,20 +55,46 @@ function Footer() {
               THE NITTY GRITTIES
             </p>
             <div className="flex flex-col">
-              <a className="text-[1rem] lg:text-end font-helvetica">
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-gray-500 text-[1rem] lg:text-end font-helvetica"
+              >
                 Good Things FAQs
               </a>
-              <a className="text-[1rem] lg:text-end font-helvetica">
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-gray-500 text-[1rem] lg:text-end font-helvetica"
+              >
                 Good Food FAQs
               </a>
-              <a className="text-[1rem] lg:text-end font-helvetica">
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-gray-500 text-[1rem] lg:text-end font-helvetica"
+              >
                 Good Places
               </a>
-              <a className="text-[1rem] lg:text-end font-helvetica">
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-gray-500 text-[1rem] lg:text-end font-helvetica"
+              >
                 Pathways{" "}
               </a>
-              <a className="text-[1rem] lg:text-end font-helvetica">Careers</a>
-              <a className="text-[1rem] lg:text-end font-helvetica">
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-gray-500 text-[1rem] lg:text-end font-helvetica"
+              >
+                Careers
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-gray-500 text-[1rem] lg:text-end font-helvetica"
+              >
                 Wholesale
               </a>
             </div>
@@ -66,8 +122,12 @@ function Footer() {
 
           <div className="text-gray-500 uppercase text-xs font-helvetica tracking-tight flex items-center justify-between lg:justify-center lg:gap-9 lg:text-[0.85rem]">
             <p>© Two Good Co. 2025</p>
-            <p>Terms of Use</p>
-            <p>Privacy Policy</p>
+            <a href="#" target="_blank">
+              Terms of Use
+            </a>
+            <a href="#" target="_blank">
+              Privacy Policy
+            </a>
           </div>
         </div>
       </div>

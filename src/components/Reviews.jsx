@@ -90,14 +90,12 @@ function Reviews() {
               className={`flex flex-col items-start p-2 min-w-24 lg:min-w-48 rounded-lg transition-all duration-300 ease-in-out`}
             >
               <div
-                className={`rounded-full w-4 h-4 border-[0.09rem] ${
-                  activeIndex == index ? "bg-black" : ""
-                } border-black mb-4`}
+                className={`rounded-full w-4 h-4 border-[0.09rem] ${activeIndex == index ? "bg-black" : ""
+                  } border-black mb-4`}
               ></div>
               <span
-                className={`text-start text-lg font-helvetica font-medium lg:text-3xl my-1 hover:text-gray-500 ${
-                  activeIndex == index ? "text-gray-500" : ""
-                }`}
+                className={`text-start text-lg font-helvetica font-medium lg:text-3xl my-1 hover:text-gray-500 ${activeIndex == index ? "text-gray-500" : ""
+                  }`}
               >
                 m// 00{index + 1}
                 <br />
@@ -108,8 +106,7 @@ function Reviews() {
           ))}
         </div>
       </div>
-
-      <div className="flex flex-col justify-center items-center gap-8 py-2 mb-10 md:mb-72 lg:mb-96">
+      <div className="flex flex-col justify-center items-center gap-8 py-2 mb-10 md:mb-72">
         <AnimatePresence mode="wait">
           <motion.p
             key={activeIndex}

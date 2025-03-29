@@ -21,6 +21,7 @@ import Impact from "./Impact.jsx";
 import Reviews from "./Reviews.jsx";
 import ProductPage from "./ProductPage.jsx";
 
+
 export {
   TwoGoodSvg,
   CartSvg,
