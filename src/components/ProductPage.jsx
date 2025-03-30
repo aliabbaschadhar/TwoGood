@@ -42,8 +42,10 @@ function ProductPage() {
               </p>
             </div>
             <div className="flex justify-center h-10">
-              <a className="font-social-mono text-[0.8rem] lg:text-[0.9rem] underline underline-offset-[0.8rem]">
+              <a href="#" className="font-social-mono text-[0.8rem] lg:text-[0.9rem] no-underline cursor-pointer relative w-fit pb-2 group text-zinc-700 hover:text-black">
                 SHOP TO SUPPORT
+                <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-black w-0 group-hover:w-full transition-all duration-500 ease-in-out origin-left"></span>
+                {/* <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-black w-full group-hover:w-0 transition-all delay-500 duration-500 ease-in-out origin-right"></span>  */}
               </a>
             </div>
           </div>

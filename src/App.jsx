@@ -12,6 +12,20 @@ import {
 } from "./components/index";
 
 function App() {
+  // Add this useEffect for the Contra button script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://contra.com/static/embed/sdk.js';
+    script.async = true;
+    script.charset = 'utf-8';
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const scroll = new LocomotiveScroll({
@@ -29,18 +43,28 @@ function App() {
   }, []);
 
   return (
-    <main
-      data-scroll-container
-      className='w-full bg-[#F7F7F7] overflow-hidden'>
-      <Navbar />
-      <LandingPage />
-      <Goods />
-      <ProductPage />
-      <Reviews />
-      <Impact />
-      <Email />
-      <Footer />
-    </main>
+    <>
+      {/* Floating Contra button that stays visible across the site */}
+      <div
+        className="contra-hire-me-button fixed bottom-8 right-8 z-50"
+        data-analyticsUserId="5857ac64-157f-4860-abd5-6bc65b9e98db"
+        data-theme="light"
+        data-username="aliabbaschadhar"
+      ></div>
+
+      <main
+        data-scroll-container
+        className='w-full bg-[#F7F7F7] overflow-hidden'>
+        <Navbar />
+        <LandingPage />
+        <Goods />
+        <ProductPage />
+        <Reviews />
+        <Impact />
+        <Email />
+        <Footer />
+      </main>
+    </>
   )
 }
 
