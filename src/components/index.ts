@@ -12,14 +12,14 @@ import NavMenuItemLink from "./NavMenuItemLink";
 import NavFooterSection from "./NavFooterSection";
 import LandingPage from "./LandingPage";
 import Goods from "./Goods";
-import GoodCard from "./GoodCard.jsx";
+import GoodCard from "./GoodCard";
 import FooterLogo from "./FooterLogo";
-import QuoteAnimation from "./QuoteAnimation.jsx";
-import Footer from "./Footer.jsx";
-import Email from "./Email.jsx";
-import Impact from "./Impact.jsx";
-import Reviews from "./Reviews.jsx";
-import ProductPage from "./ProductPage.jsx";
+import QuoteAnimation from "./QuoteAnimation";
+import Footer from "./Footer";
+import Email from "./Email";
+import Impact from "./Impact";
+import Reviews from "./Reviews";
+import ProductPage from "./ProductPage";
 
 
 export {
@@ -34,7 +34,8 @@ export {
   NavMenuOverlay,
   NavCartOverlay,
   NavMenuItemLink,
-  NavFooterSection, FooterLogo,
+  NavFooterSection,
+  FooterLogo,
   QuoteAnimation,
   Footer,
   Email,
@@ -44,4 +45,4 @@ export {
   LandingPage,
   Goods,
   GoodCard,
-}
+};

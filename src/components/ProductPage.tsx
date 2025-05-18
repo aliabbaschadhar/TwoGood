@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { basil, alemais, teady, theCourse } from "../assets/images/index";
 import { motion } from "framer-motion";
@@ -90,8 +89,10 @@ function HoverProduct({ item }) {
           <motion.div
             className="absolute bg-white opacity-100 z-0 rounded-full pointer-events-none"
             style={{
-              width: "18rem",
-              height: "18rem",
+              width: '10rem', // default for mobile
+              height: '10rem',
+              // Responsive size
+              ...(window.innerWidth >= 1024 ? { width: '18rem', height: '18rem' } : window.innerWidth >= 640 ? { width: '14rem', height: '14rem' } : {}),
               transform: `translate(-50%, -50%)`,
               left: cursorPos.x,
               top: cursorPos.y,
